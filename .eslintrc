@@ -10,7 +10,6 @@
     "newline-before-return": "error", 
     "eqeqeq": ["error", "always"], 
     "prefer-template": "error", 
-    "arrow-parens": ["error", "as-needed"], 
     "prefer-arrow-callback": "error", 
     "lines-between-class-members": ["error", "always"], 
     "object-shorthand": ["error", "always"], 
