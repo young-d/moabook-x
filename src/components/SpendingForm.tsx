@@ -1,8 +1,9 @@
-import { useSpending } from '@contexts/SpendingProvider';
 import styled from '@emotion/styled';
 import { ChangeEvent, FormEvent, useCallback, useState } from 'react';
 import { BsPlusCircleFill } from 'react-icons/bs';
 import { formattedAmount, formattedDate } from '@utils/formattedNumber';
+import { useDispatch } from 'react-redux';
+import { addSpending } from '@redux/spending';
 
 const SpendingForm = () => {
   const [spending, setSpending] = useState({
@@ -10,7 +11,7 @@ const SpendingForm = () => {
     content: '',
     amount: 0,
   });
-  const { addSpending } = useSpending();
+  const dispatch = useDispatch();
 
   const handleSubmit = useCallback(
     (e: FormEvent) => {
@@ -25,15 +26,14 @@ const SpendingForm = () => {
 
         return;
       }
-
-      addSpending({ ...spending, content: spending.content.trim() });
+      dispatch(addSpending({ ...spending, content: spending.content.trim() }));
       setSpending({
         ...spending,
         content: '',
         amount: 0,
       });
     },
-    [spending, addSpending],
+    [dispatch, spending],
   );
 
   const onChangeDate = useCallback(
