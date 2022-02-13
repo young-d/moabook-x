@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
-      "@pages/*": ["./pages/*"],
-      "@utils/*": ["./utils/*"],
-      "@components/*": ["./components/*"],
-      "@domains/*": ["./domains/*"],
-      "@hooks/*": ["./hooks/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@components/*": ["./src/components/*"],
+      "@domains/*": ["./src/domains/*"],
+      "@hooks/*": ["./src/hooks/*"],
     }
   }
 }
