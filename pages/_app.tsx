@@ -1,11 +1,15 @@
 import type { AppProps } from 'next/app';
 import styled from '@emotion/styled';
+import { Provider } from 'react-redux';
+import { store } from 'redux';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <RootContainer>
-      <Component {...pageProps} />
-    </RootContainer>
+    <Provider store={store}>
+      <RootContainer>
+        <Component {...pageProps} />
+      </RootContainer>
+    </Provider>
   );
 }
 
